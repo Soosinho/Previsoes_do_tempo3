@@ -1,14 +1,15 @@
 package br.usjt.previsoes.model;
 
 import java.io.Serializable;
+import java.util.List;
 
-import br.usjt.previsoes.model.DiaSemana;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -25,6 +26,9 @@ public class Previsao implements Serializable {
 	@OneToOne(optional = false)
 	@JoinColumn(name = "ID_DIASEMANA")
 	private DiaSemana diaSemana;
+	
+	@ManyToOne
+	private Cidade cidade;
 	
 	@Column(name = "TEMPMINIMA")
 	private Double tempMinima;

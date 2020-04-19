@@ -18,6 +18,7 @@
 			<table class="table">
 				<thead>
 					<tr>
+						<th>Cidade</th>
 						<th>Dia da Semana</th>
 						<th>Data/Hora</th>
 						<th>Temperatura Máxima (ºC)</th>
@@ -30,6 +31,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="previsao : ${previsoes}">
+						<td th:text="Osasco"></td>
 						<td th:text="${previsao.diaSemana.diaSemana}"></td>
 						<td th:text="${previsao.dataHora}"></td>
 						<td th:text="${previsao.tempMaxima}"></td>

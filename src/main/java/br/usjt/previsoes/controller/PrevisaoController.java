@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.usjt.previsoes.model.Previsao;
+import br.usjt.previsoes.service.CidadeService;
 import br.usjt.previsoes.service.DiaSemanaService;
 import br.usjt.previsoes.service.PrevisaoService;
 
@@ -15,6 +16,9 @@ public class PrevisaoController {
 	
 	@Autowired
 	private PrevisaoService previsaoService;
+	
+	@Autowired
+	private CidadeService cidadeService;
 	
 	@Autowired DiaSemanaService diaService;
 	
@@ -26,6 +30,7 @@ public class PrevisaoController {
 		mv.addObject(new Previsao());
 		
 		mv.addObject("previsoes", previsaoService.listarTodos());
+		mv.addObject("cidade", cidadeService.listarTodos());
 		mv.addObject("diaSemana", diaService.listarTodos());
 				
 		return mv;
